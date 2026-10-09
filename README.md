@@ -454,34 +454,7 @@ Quy ước: `0` là thành công, khác 0 là thất bại. Các script và côn
 ## 7. Biên dịch và chạy chương trình C trên Linux
 
 
-Biên dịch:
-
-```bash
-gcc -Wall -Wextra -O2 -o filestat filestat.c
-```
-
-Chạy:
-
-```bash
-./filestat <file_path>
-```
-
-Ví dụ:
-
-```bash
-./filestat test.txt
-```
-
-Kết quả:
-
-```
-File Path     : test.txt
-File Type     : Regular File
-Size          : 1024 bytes
-Last Modified : 2026-10-09 19:40:12
-```
-
-## 3. Luồng hoạt động và các API sử dụng
+### 7.1. Luồng hoạt động và các API sử dụng
 
 Luồng xử lý của chương trình:
 
@@ -506,9 +479,7 @@ Xử lý lỗi:
 - Không truyền argument hoặc truyền quá nhiều: in thông báo lỗi, in `Usage: ./filestat <file_path>` ra `stderr`, thoát với mã 1.
 - `lstat()` trả về -1 (đường dẫn không tồn tại, không có quyền truy cập, ...): gọi `perror()` để in nguyên nhân, thoát với mã 1, không dùng dữ liệu `struct stat`.
 
-## 4. Kiểm thử
-
-### 4.1. Bảng tổng hợp các trường hợp kiểm thử
+### 7.2. Bảng tổng hợp các trường hợp kiểm thử
 
 | Test Case | Lệnh thực thi | Loại đối tượng nhận diện | Kết quả đánh giá |
 |---|---|---|---|
@@ -519,7 +490,7 @@ Xử lý lỗi:
 | Case 5: Không có argument | `./filestat` | Không xác định | In thông báo lỗi và `Usage`, thoát mã 1 |
 | Case 6: Quá nhiều argument | `./filestat a b` | Không xác định | In thông báo lỗi và `Usage`, thoát mã 1 |
 
-### 4.2. Kết quả chi tiết
+### 7.3. Kết quả chi tiết
 
 #### Case 1: Regular File
 
@@ -532,7 +503,7 @@ touch test.txt
 
 Kết quả:
 
-![Case 1 - Regular File](ouput/regular.png)
+![Case 1 - Regular File](output/regular.png)
 
 #### Case 2: Directory
 
@@ -582,7 +553,7 @@ Lệnh:
 
 Kết quả:
 
-![Case 5 - Không có argument](ouput/usage.png)
+![Case 5 - Không có argument](output/usage.png)
 
 #### Case 6: Quá nhiều argument
 
