@@ -1,0 +1,29 @@
+cd ~/filestat_lab
+cat > .gitignore << 'EOF'
+# Binary da bien dich
+/filestat
+*.o
+*.out
+*.exe
+
+# Thu muc va file dung de test
+test_filestat/
+testdir/
+testlink
+test.txt
+
+# Debug / core dump
+core
+core.*
+*.dSYM/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# He thong
+.DS_Store
+Thumbs.db
+EOF
